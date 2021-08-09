@@ -27,7 +27,7 @@ def upload_file():
             car2='汽車'
         elif car=="B":
             car2='機車'
-        result=os.popen("docker run -it --rm -v $(pwd)/uploads:/data:ro openalpr "+file.filename+" --config tw.conf")
+        result=os.popen("docker run -it --rm -v $(pwd)/uploads:/data:ro openalpr "+file.filename+" --config ./dataset/tw.conf")
         fin=result.read()
         q=[i for i in range(0,fin.count("plate"))]
 
